@@ -1,31 +1,32 @@
 # -*- coding: utf-8 -*-
 
-import LINETCR
-from LINETCR.lib.curve.ttypes import *
+import PRANKBOTS
+from PRANKBOTS.lib.curve.ttypes import *
 from datetime import datetime
-import time,random,sys,json,codecs,threading,glob,re,os,subprocess
+import time,random,sys,re,os,json,subprocess,codecs,threading,glob
 
-cl = LINETCR.LINE() #Luffy
-cl.login(qr=True)
-cl.loginResult()
+acil = PRANKBOTS.LINE() 
+acil.login(token="token akun utama/selfbot")
+acil.loginResult()
 
-ki = LINETCR.LINE() #Zorro
-ki.login(qr=True)
-ki.loginResult()
+pb1 = PRANKBOTS.LINE() 
+pb1.login(token="token asist 1")
+pb1.loginResult()
 
-kk = LINETCR.LINE() #Sanji
-kk.login(qr=True)
-kk.loginResult()
+pb2 = PRANKBOTS.LINE() 
+pb2.login(token="token asist 2")
+pb2.loginResult()
 
-kc = LINETCR.LINE() #Ussop
-kc.login(qr=True)
-kc.loginResult()
+pb3 = PRANKBOTS.LINE() 
+pb3.login(token="token asist 1")
+pb3.loginResult()
 
-ks = LINETCR.LINE() #Chooper
-ks.login(qr=True)
-ks.loginResult()
+pb4 = PRANKBOTS.LINE() 
+pb4.login(token="token asist 2")
+pb4.loginResult()
 
-print "login success plak"
+
+print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -58,27 +59,15 @@ Owner : ✰ЌờᎮḼΛẌֆ✰
 O҉n҉e҉ ҉P҉i҉e҉c҉e҉ ҉T҉e҉a҉m҉ ҉P҉r҉o҉t҉e҉c҉t҉
 -==================-
 """
-KAC=[cl,ki,kk,kc,ks]
-#DEF1=[ki,kk,kc,ks,ka,kb,ko,ke,ku] Udah Ga Kepake(Boleh di apus)
-#DEF2=[cl,kk,kc,ks,ka,kb,ko,ke,ku] Udah Ga Kepake(Boleh di apus)
-#DEF3=[cl,ki,kc,ks,ka,kb,ko,ke,ku] Udah Ga Kepake(Boleh di apus)
-#DEF4=[cl,ki,kk,ks,ka,kb,ko,ke,ku] Udah Ga Kepake(Boleh di apus)
-#DEF5=[cl,ki,kk,kc,ka,kb,ko,ke,ku] Udah Ga Kepake(Boleh di apus)
-#DEF6=[cl,ki,kk,kc,ks,kb,ko,ke,ku] Udah Ga Kepake(Boleh di apus)
-#DEF7=[cl,ki,kk,kc,ks,ka,ko,ke,ku] Udah Ga Kepake(Boleh di apus)
-#DEF8=[cl,ki,kk,kc,ks,ka,kb,ke,ku] Udah Ga Kepake(Boleh di apus)
-#DEF9=[cl,ki,kk,kc,ks,ka,kb,ko,ku] Udah Ga Kepake(Boleh di apus)
-#DEF10=[cl,ki,kk,kc,ks,ka,kb,ko,ke] Udah Ga Kepake(Boleh di apus)
-mid = cl.getProfile().mid #Luffy
-Amid = ki.getProfile().mid #Zorro
-Bmid = kk.getProfile().mid #Sanji
-Cmid = kc.getProfile().mid #Ussop
-Dmid = ks.getProfile().mid #Chooper
+KAC=[acil,pb1,pb2,pb3,pb4]
+mid = acil.getProfile().mid
+pb1mid = pb1.getProfile().mid
+pb2mid = pb2.getProfile().mid
+pb3mid = pb1.getProfile().mid
+pb4mid = pb2.getProfile().mid
+Bots=[mid,pb1mid,pb2mid,pb3mid,pb4mid]
+admsa = "mid akun utama/sb"
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid]
-admin=["ued156c86ffa56024c0acba16f7889e6d"] 
-owner=["ued156c86ffa56024c0acba16f7889e6d"]
-whitelist=[""]
 wait = {
     'contact':False,
     'autoJoin':True,
